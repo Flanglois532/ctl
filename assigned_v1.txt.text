@@ -1,0 +1,117 @@
+Title: Louisiana Indigency Calculator
+Author: Francis Langlois
+Before:<link rel=stylesheet type=text/css href=https://suffolklitlab.org/howto/qna/style/style.css>
+<div id=icon style=background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');></div>
+<h2 style=text-align:center;> Louisiana Indigency Calculator</h2>
+<p><b>This is a <a href=http://www.codingthelaw.org/>class project</a>. You should not rely on it as a source of legal information. It is likely incomplete.</b></p>
+<p>Answer the following questions to see if someone qualifies for appointment of counsel.</p>
+
+Q(1): Is the Defendant currently facing criminal charges in the State of Louisiana, 
+including any misdemeanor punishable by a term of imprisonment?
+A:Yes
+	Q(1.1):GOTO:2
+A:No
+	Q(1.2):GOTO:No
+
+Q(2): Does the Defendant receives public assistance (including Food Stamps, Temporary Assistance 
+for Needy Families, Medicaid and Disability Insurance)?
+
+A:Yes
+	Q(2.1):GOTO:SFH
+A:No
+	Q(2.2): Is the Defendant currently serving a sentence in a correctional institution or is housed
+	in a mental health facility? 
+	A: Yes
+		Q(2.2.1):GOTO:SFH
+	A: No
+		Q(2.2.2):GOTO:3		
+Q(3): Does the Defendant resides in public housing?
+A: Yes
+	Q(3.1):GOTO:SFH
+A: No
+	Q(3.2): What is the size of the family/household of the Defendant?
+	A: 1
+		Q(3.2.1): Is the annual income of the Defendant less than $24,980?
+		A: Yes
+			Q(3.2.1.1):GOTO:SFH
+		A: No
+			Q(3.2.1.2):GOTO:4
+	A: 2
+		Q(3.2.2): Is the annual income of the Defendant less than $33,820?
+		A: Yes
+			Q(3.2.2.1):GOTO:SFH
+		A: No
+			Q(3.2.2.2):GOTO:4
+	A: 3
+		Q(3.2.3): Is the annual income of the Defendant less than $42,660?
+		A: Yes
+			Q(3.2.3.1):GOTO:SFH
+		A: No
+			Q(3.2.3.2):GOTO:4
+	A: 4
+		Q(3.2.4): Is the annual income of the Defendant less than $51,500?
+		A: Yes
+			Q(3.2.4.1):GOTO:SFH
+		A: No
+			Q(3.2.4.2):GOTO:4
+	A: 5
+		Q(3.2.5): Is the annual income of the Defendant less than $60,340?
+		A: Yes
+			Q(3.2.5.1):GOTO:SFH
+		A: No
+			Q(3.2.1.10):GOTO:4
+	A: 6
+		Q(3.2.6): Is the annual income of the Defendant less than $69,180?
+		A: Yes
+			Q(3.2.1.11):GOTO:SFH
+		A: No
+			Q(3.2.1.12):GOTO:4
+	A: 7
+		Q(3.2.7): Is the annual income of the Defendant less than $78,020?
+		A: Yes
+			Q(3.2.1.13):GOTO:SFH
+		A: No
+			Q(3.2.1.14):GOTO:4
+	A: 8
+		Q(3.2.8): Is the annual income of the Defendant less than $86,860?
+		A: Yes
+			Q(3.2.1.15):GOTO:SFH
+		A: No
+			Q(3.2.1.16):GOTO:4
+	A: More than 8
+		Q(3.2.9): If the size of the Defendant's family/household is greater than 8,
+		add $8,840 for each additional person. Is  the annual income of the Defendant less 
+		than this amount? 
+		A: Yes
+			Q(3.2.1.17):GOTO:SFH
+		A: No
+			Q(3.2.1.18):GOTO:4
+
+Q(4): Considering a series of factors, including the seriousness of the charges brought against the 
+Defendant, the monthly expenses of the Defendant and local private counsel rates, would the Defendant 
+suffer from substantial hardship were he or she to seek private counsel? For instance, would the payment of legal 
+fees deprive the Defendant or his or her dependents of the necessities of life like clothing, shelter or food? 
+A: Yes
+	Q(4.1): It is reasonable to think that a court would make the preliminary determination that 
+	the Defendant is indigent and authorize him to apply for publicly-funded legal counsel in 
+	the State of Louisiana. The final determination of the court will consider factors such as income 
+	or funds from employment or any other source, including public assistance, to which the Defendant
+	is entitled, property owned by the Defendant or in which he has an economic interest, outstanding 
+	obligations, the number and ages of dependents, employment and job training history, and level of 
+	education. Those information should be obtained from the Defendant to prepare submissions to the Court. 
+A: No
+	Q(4.2):GOTO:No
+			
+
+Q(No): The Defendant cannot benefit from publicly-funded legal counsel in the State of Louisiana.  
+Q(SFH): The Defendant benefits from a presumption of substantial financial hardship.
+It is reasonable to think that a court would make the preliminary determination that the Defendant 
+is indigent and authorize him to apply for publicly-funded legal counsel in  the State of Louisiana.
+The final determination of the court will consider factors such as income  or funds from employment 
+or any other source, including public assistance, to which the Defendant is entitled, property owned 
+by the Defendant or in which he has an economic interest, outstanding obligations, the number and 
+ages of dependents, employment and job training history, and level of education. Those information 
+should be obtained from the Defendant to prepare submissions to the court.
+
+
+
